@@ -9,7 +9,7 @@ def parse_requirements(filename):
 install_reqs = parse_requirements('requirements.txt')
 test_reqs = parse_requirements('requirements_test.txt')
 
-version = '0.6.1'
+version = 'fv0.6.4'
 
 README="""Python class to integrate Boto3's Cognito client so it is easy to login users. With SRP support."""
 
