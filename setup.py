@@ -1,10 +1,13 @@
 import os
 
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
 
-install_reqs = parse_requirements('requirements.txt', session=False)
-test_reqs = parse_requirements('requirements_test.txt', session=False)
+install_reqs = parse_requirements('requirements.txt')
+test_reqs = parse_requirements('requirements_test.txt')
 
 version = '0.6.1'
 
